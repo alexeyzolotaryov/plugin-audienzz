@@ -5,7 +5,9 @@ import type { PluginAudienzzPlugin } from './definitions';
 export class PluginAudienzzWeb
   extends WebPlugin
   implements PluginAudienzzPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
+  async showBanner(options: {
+    placementId: string;
+  }): Promise<{ placementId: string }> {
     console.log('ECHO', options);
     return options;
   }

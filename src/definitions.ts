@@ -1,3 +1,5 @@
 export interface PluginAudienzzPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  showBanner(options: {
+    placementId: string;
+  }): Promise<{ placementId: string }>;
 }
