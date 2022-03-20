@@ -12,6 +12,13 @@ Pod::Spec.new do |s|
   s.source = { :git => package['repository']['url'], :tag => s.version.to_s }
   s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
   s.ios.deployment_target  = '12.0'
-  s.dependency 'Capacitor'
   s.swift_version = '5.1'
+
+  s.dependency 'Capacitor'
+  s.dependency "AppNexusSDK"
+
+#   s.prepare_command = <<-CMD
+#     sed -i'.original' -e 's/mraid.util.nativeCall(\\"mraid:\\/\\/audioVolumeChange\\/\\");/\\/\\/ mraid.util.nativeCall(\\"mraid:\\/\\/audioVolumeChange\\/\\");/g' ../../ios/Pods/AppNexusSDK/sdk/sourcefiles/Resources/ANMRAID.bundle/mraid.js
+#   CMD
+
 end
